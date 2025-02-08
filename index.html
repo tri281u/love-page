@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bạn có yêu tôi không?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffebf2;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #d63384;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100dvh;
+            padding: 10px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 12px 24px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #yes {
+            background-color: #ff69b4;
+            color: white;
+            border-radius: 5px;
+        }
+        #no {
+            background-color: #bbb;
+            color: black;
+            border-radius: 5px;
+        }
+        img {
+            max-width: 90%;
+            height: auto;
+        }
+        .love-message {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100dvh;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="main-container">
+        <h1>Bạn có yêu tôi không?</h1>
+        <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="Gấu ôm nhau GIF">
+        <div class="buttons">
+            <button id="yes" onclick="love()">Có</button>
+            <button id="no" onclick="growYes()">Không</button>
+        </div>
+    </div>
+    
+    <div class="love-message" id="love-message">
+        <h1>Tôi biết bạn sẽ yêu tôi mà! ❤️</h1>
+        <img src="https://media.giphy.com/media/5xaOcLT3CmoklNKe3ZS/giphy.gif" alt="Gấu dễ thương GIF">
+    </div>
+
+    <script>
+        let yesButton = document.getElementById("yes");
+        let noButton = document.getElementById("no");
+        let mainContainer = document.getElementById("main-container");
+        let loveMessage = document.getElementById("love-message");
+        let size = 18;
+        
+        function growYes() {
+            size += 10;
+            yesButton.style.fontSize = size + "px";
+            yesButton.style.padding = (size / 2) + "px " + (size) + "px";
+        }
+
+        function love() {
+            mainContainer.style.display = "none";
+            loveMessage.style.display = "flex";
+        }
+    </script>
+</body>
+</html>
